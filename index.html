@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>IMFINE WEB APP</h1>
+    <img src="imfine_5.png"/>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .then(function(success) {
+                console.log('[Service Worker 등록 완료]', success);
+            })
+            .catch(function(error) {
+                console.log('[Service Worker 등록 실패]', error);
+            });
+        }
+
+    </script>
+    
+</body>
+</html>
