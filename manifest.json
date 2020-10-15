@@ -3,12 +3,12 @@
     "name": "imfine offline web",
     "icons": [
       {
-        "src": "192x.png",
+        "src": "/WebApp/192x.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "512x.png",
+        "src": "/WebApp/512x.png",
         "type": "image/png",
         "sizes": "512x512"
       }

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/WebApp/manifest.json">
     
     <title>Document</title>
 </head>
 <body>
 
     <h1>IMFINE WEB APP</h1>
-    <img src="imfine_5.png"/>
+    <img src="/WebApp/imfine_5.png"/>
 
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('/WebApp/sw.js')
             .then(function(success) {
                 console.log('[Service Worker 등록 완료]', success);
             })
