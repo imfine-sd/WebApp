@@ -48,22 +48,22 @@ class WowzaPeerConnectionPlay
   //   userData: any
   //   mungeSDP: function (sdpStr)
   //   onconnectionstatechange: function
-  //   onerror: function 
-  set (props) 
+  //   onerror: function
+  set (props)
   {
     if (props.sdpURL != null)
       this.sdpURL = props.sdpURL;
     if (props.videoElement != null)
       this.videoElement = props.videoElement;
-  
+
     if (props.streamInfo != null)
       this.streamInfo = props.streamInfo;
     if (props.userData != null)
       this.userData = props.userData;
-  
+
     if (props.mungeSDP != null)
       this.mungeSDP = props.mungeSDP;
-  
+
     if (props.onconnectionstatechange != null)
       this.onconnectionstatechange = props.onconnectionstatechange;
     if (props.onstop != null)
@@ -72,14 +72,14 @@ class WowzaPeerConnectionPlay
       this.onerror = props.onerror;
   }
 
-  gotIceCandidate (event) 
+  gotIceCandidate (event)
   {
     if (event.candidate != null) {
       // console.log('gotIceCandidate: ' + JSON.stringify({ 'ice': event.candidate }));
     }
   }
 
-  gotDescription (description) 
+  gotDescription (description)
   {
     let _this = this;
     console.log('WowzaPeerConnectionPlay.gotDescription');
@@ -93,9 +93,8 @@ class WowzaPeerConnectionPlay
       .catch(err => console.log('set description error', err));
   }
 
-  gotRemoteTrack (event) 
+  gotRemoteTrack (event)
   {
-    console.log('WowzaPeerConnectionPlay.gotRemoteTrack: kind:' + event.track.kind + ' stream:' + event.streams[0]);
     try {
       this.videoElement.srcObject = event.streams[0];
     } catch (error) {
@@ -103,7 +102,7 @@ class WowzaPeerConnectionPlay
     }
   }
 
-  wsConnect(url) 
+  wsConnect(url)
   {
     let _this = this;
     console.log('WowzaPeerConnectionPlaywsConnect: ' + url);
@@ -117,7 +116,7 @@ class WowzaPeerConnectionPlay
     }
     this.wsConnection.binaryType = 'arraybuffer';
 
-    this.wsConnection.onopen = function () 
+    this.wsConnection.onopen = function ()
     {
       console.log("WowzaPeerConnectionPlay.onopen");
 
@@ -152,7 +151,7 @@ class WowzaPeerConnectionPlay
       _this.wsConnection.send('{"direction":"play", "command":"getAvailableStreams", "streamInfo":' + JSON.stringify(_this.streamInfo) + ', "userData":' + JSON.stringify(_this.userData) + '}');
     }
 
-    this.wsConnection.onmessage = function (evt) 
+    this.wsConnection.onmessage = function (evt)
     {
       console.log("wsConnection.onmessage: " + evt.data);
 
@@ -218,10 +217,10 @@ class WowzaPeerConnectionPlay
         if (_this.wsConnection != null) {
           _this.wsConnection.close();
         }
-          
+
         _this.wsConnection = null;
       }
-      // now check for getAvailableResponse command to close the connection 
+      // now check for getAvailableResponse command to close the connection
       if ('getAvailableStreams'.localeCompare(msgCommand) == 0) {
         _this.stop();
         _this.getAvailableStreamsResolve(msgJSON);
@@ -256,7 +255,7 @@ class WowzaPeerConnectionPlay
     if (this.peerConnection != null) {
       this.peerConnection.close();
     }
-    
+
     this.peerConnection = null;
 
     if (this.wsConnection != null) {

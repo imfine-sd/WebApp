@@ -3,13 +3,7 @@
  * This code is licensed pursuant to the BSD 3-Clause License.
  */
 
-#play-video-container {
-  height:0;
-  width:100%;
-  padding-bottom:57%;
-  background-color:rgba(102, 102, 102, 1);
-  border-radius:0.75em;
-}
+
 
 #publish-content,
 #play-content {
@@ -63,11 +57,12 @@ ul.navbar-nav {
   flex-direction: unset;
 }
 
+.peer-video-player {
+  width:100%;
+}
 .navbar-nav li.nav-item.page {
   text-align: center;
 }
-
-
 .navbar-nav li.nav-item.page.active span{
   border-bottom: solid 3px  #65686A;
 }
@@ -86,4 +81,23 @@ ul.navbar-nav {
 }
 .navbar-nav li.nav-item.active a{
   color: #65686A;
+}
+
+.peer-videos-container{
+  max-height: 700px;
+  overflow-y: scroll;
+}
+
+.peer-video-container{
+  position: relative;
+  background-color:rgba(102, 102, 102, 1);
+  border-radius:0.75em;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.peer-video-controls {
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }

@@ -70,7 +70,7 @@ const on = (_callbacks) => {
 }
 
 // External set
-const set = async (props) => 
+const set = async (props) =>
 {
   console.log('WowzaWebRTC.set');
   console.log(props);
@@ -137,7 +137,7 @@ const set = async (props) =>
     constraintsChanged = true;
   }
 
-  try 
+  try
   {
     let s1 = await setState(newState);
     if (s1.stream == null)
@@ -151,7 +151,7 @@ const set = async (props) =>
     }
     return getState();
   }
-  catch (e) 
+  catch (e)
   {
     errorHandler(e);
     return null;
@@ -180,7 +180,7 @@ const getUserMedia = (mediaKind) =>
 {
   mediaKind = mediaKind || 'both';
 
-  return new Promise((resolve,reject) => 
+  return new Promise((resolve,reject) =>
   {
     console.log('WowzaWebRTCPublish.getUserMedia');
 
@@ -311,7 +311,7 @@ const getDevices = () =>
     console.log('WowzaWebRTCPublish.getDevices');
     navigator.mediaDevices.enumerateDevices().then((devices) =>
     {
-      console.log(JSON.stringify(devices));
+      // console.log(JSON.stringify(devices));
       let constraints = {...getState().constraints};
       let cameras = [];
       let microphones = [];
@@ -339,19 +339,18 @@ const getDevices = () =>
   });
 }
 
-function onconnectionstatechange(evt)
-{
+const onconnectionstatechange = (evt) => {
   if (evt.target != null && evt.target.connectionState != null)
   {
     setState({connectionState:evt.target.connectionState});
   }
 }
-function onstop()
-{
+
+const onstop = () => {
   setState({connectionState:'stopped'});
 }
 
-function setEnabled(trackKind, enabled) {
+const setEnabled = (trackKind, enabled) => {
   let currentState = getState();
   if (currentState.stream != null && currentState.stream.getTracks != null)
   {
@@ -363,13 +362,13 @@ function setEnabled(trackKind, enabled) {
   }
 }
 
-function setAudioEnabled(enabled) {
+const setAudioEnabled = (enabled) => {
   console.log('WowzaWebRTC.setAudioEnabled:' + enabled);
   setEnabled("audio",enabled);
   setState({audioEnabled:enabled});
 }
 
-function setVideoEnabled(enabled) {
+const setVideoEnabled = (enabled) => {
   console.log('WowzaWebRTC.setVideoEnabled:' + enabled);
   setEnabled("video",enabled);
   setState({videoEnabled:enabled});
@@ -417,7 +416,7 @@ function getDisplayStream() {
 const setCamera = (id) =>
 {
   console.log("WowzaWebRTC.setCamera: " + id);
-  if (id === 'screen') 
+  if (id === 'screen')
   {
     getDisplayStream()
     .then((stream) => {
@@ -442,7 +441,7 @@ const setCamera = (id) =>
       }
     });
   }
-  else 
+  else
   {
     let constraints = {...state.constraints};
     if (typeof constraints.video === 'boolean')
@@ -551,6 +550,6 @@ let WowzaWebRTC = {
   setAudioEnabled: setAudioEnabled,
   setVideoEnabled: setVideoEnabled,
   setCamera: setCamera,
-  setMicrophone: setMicrophone
+  setMicrophone: setMicrophone,
 }
 export default WowzaWebRTC;

@@ -55,7 +55,7 @@ const updateForm = (state) => {
   }
 }
 
-const getQueryVariable = (variable,defaultVal) => {
+const getQueryVariable = (variable,defaultVal,isString = false) => {
    var query = window.location.search.substring(1);
    var vars = query.split('&');
    for (var i = 0; i < vars.length; i++)
@@ -63,7 +63,7 @@ const getQueryVariable = (variable,defaultVal) => {
       var pair = vars[i].split('=');
       if (decodeURIComponent(pair[0]) == variable)
       {
-         return decodeURIComponent(pair[1]);
+         return isString ? decodeURIComponent(pair[1].replace(/\+/g, '%20')) : decodeURIComponent(pair[1]);
       }
    }
    return defaultVal;

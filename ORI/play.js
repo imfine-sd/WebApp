@@ -5,20 +5,20 @@
 
 import Settings from './lib/Settings.js';
 import WowzaWebRTCPlay from './lib/WowzaWebRTCPlay.js';
-window.WowzaWebRTCPlay = WowzaWebRTCPlay;
 
 let state = {
   settings: {
-    playSdpURL: '',
+    playSdpURL: "",
     playApplicationName: "",
-    playStreamName: ''
+    playStreamName: ""
   }
 };
 let statePrefix = 'play';
 
 const init = (errorHandler,connected,stopped) => {
   initListeners();
-  WowzaWebRTCPlay.on({
+  window.wowzaWebRTCPlay = new WowzaWebRTCPlay();
+  wowzaWebRTCPlay.on({
     onError:errorHandler,
     onStateChanged: (state) => {
       if (state.connectionState === 'connected')
@@ -29,7 +29,7 @@ const init = (errorHandler,connected,stopped) => {
       }
     }
   });
-  WowzaWebRTCPlay.set({
+  wowzaWebRTCPlay.set({
     videoElementPlay:document.getElementById('player-video'),
   });
 }
@@ -40,12 +40,12 @@ const getState = () => {
 
 const start = (settings) => {
   update(settings).then(() => {
-    WowzaWebRTCPlay.play();
+    wowzaWebRTCPlay.play();
   });
 }
 
 const stop = () => {
-  WowzaWebRTCPlay.stop();
+  wowzaWebRTCPlay.stop();
 }
 
 const update = (settings) => {
@@ -57,7 +57,7 @@ const update = (settings) => {
     sendKey = sendKey[0].toLowerCase() + sendKey.slice(1);
     sendSettings[sendKey] = settings[key];
   }
-  return WowzaWebRTCPlay.set(sendSettings);
+  return wowzaWebRTCPlay.set(sendSettings);
 }
 
 /*
@@ -122,7 +122,7 @@ const initListeners = () => {
   $("#play-toggle").click((e) => {
     if (state.playing)
     {
-      WowzaWebRTCPlay.stop();
+      wowzaWebRTCPlay.stop();
     }
     else
     {
@@ -138,20 +138,7 @@ const initFormAndSettings = () => {
   $("#play-video-container").css("background-color","rgba(102, 102, 102, 1)")
   let pageParams = Settings.mapFromCookie(state.settings);
   pageParams = Settings.mapFromQueryParams(pageParams);
-
-  pageParams.playApplicationName = 'live'
-  pageParams.playSdpURL = 'wss://5f6c3c51bd3a2.streamlock.net/webrtc-session.json'
-
-  const stream_name= window.location.href.split('?')[1].replace('id=', '')
-  pageParams.playStreamName = stream_name
-
   Settings.updateForm(pageParams);
-
-  setTimeout(() => {
-    let playSettings = Settings.mapFromForm(Settings.serializeArrayFormValues($( "#play-settings-form" )));
-    Settings.saveToCookie(playSettings);
-    start(playSettings);
-  }, 2000)
 }
 initFormAndSettings();
 init(errorHandler,onPlayPeerConnected,onPlayPeerConnectionStopped);

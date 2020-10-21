@@ -68,7 +68,14 @@ function gotDescription(description) {
 
   peerConnection
     .setLocalDescription(description)
-    .then(() => wsConnection.send('{"direction":"publish", "command":"sendOffer", "streamInfo":' + JSON.stringify(streamInfo) + ', "sdp":' + JSON.stringify(description) + ', "userData":' + JSON.stringify(userData) + '}'))
+    .then(() => {
+      wsConnection.send('{"direction":"publish", "command":"sendOffer", "streamInfo":' + 
+        JSON.stringify(streamInfo) + 
+        ', "sdp":' + 
+        JSON.stringify(description) + 
+        ', "userData":' + 
+        JSON.stringify(userData) + '}');
+    })
     .catch((error)=>{
       let newError = {message:"Peer connection failed",...error};
       errorHandler(newError);
@@ -232,7 +239,7 @@ function replaceTrack (type, newTrack)
 //   userData: any
 //   mungeSDP: function (sdpStr, mungeData)
 //   onconnectionstatechange: function
-//   onerror: function 
+//   onerror: function
 
 function start (props)
 {
@@ -254,12 +261,10 @@ function start (props)
     onstop = props.onstop;
   if (props.onerror != null)
     onerror = props.onerror;
-
   if (props.onstats != null)
   {
     statsInterval = setInterval(createOnStats(props.onstats),5000);
   }
-
   if (peerConnection == null)
   {
     if (wsConnection != null)
@@ -282,7 +287,7 @@ function stop ()
   peerConnection = undefined;
   videoSender = undefined;
   audioSender = undefined;
-  
+
   if (wsConnection != null)
     wsConnection.close();
   wsConnection = undefined;
@@ -316,5 +321,6 @@ export default {
   start: start,
   stop: stop,
   isStarted: isStarted,
-  replaceTrack: replaceTrack
+  replaceTrack: replaceTrack,
+  // pollAvailableStreams: pollAvailableStreams
 };
