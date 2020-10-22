@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "107147c4499cc5212374",
+    "revision": "7a25f30a25b93accec4f",
     "url": "/WebApp/css/app.92e9b05d.css"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/css/wowza-streaming-dev.css"
   },
   {
-    "revision": "6bc267e68292f8c76c37922ade398d6c",
+    "revision": "64a790d823eed18549f8f7e77912c313",
     "url": "/WebApp/index.html"
   },
   {
@@ -24,12 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/js/Adapter.js"
   },
   {
-    "revision": "045ceec136f0dea1bb9a",
-    "url": "/WebApp/js/about.8eeb655f.js"
+    "revision": "042c1c866496c1a61185",
+    "url": "/WebApp/js/about.2794bd12.js"
   },
   {
-    "revision": "107147c4499cc5212374",
-    "url": "/WebApp/js/app.530fe322.js"
+    "revision": "7a25f30a25b93accec4f",
+    "url": "/WebApp/js/app.3a10b657.js"
   },
   {
     "revision": "67737693dba7506d3401",
