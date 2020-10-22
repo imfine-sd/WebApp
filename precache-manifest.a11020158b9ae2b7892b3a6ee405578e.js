@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b8c5b673f418db28bc3d",
+    "revision": "71406631e13bfd712cdb",
     "url": "/WebApp/css/app.a77d6e92.css"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/css/chunk-vendors.9d5a7cae.css"
   },
   {
-    "revision": "45859484ef55823a5ef1981b11e318cf",
+    "revision": "b3d8d1638e748ec500dcf5998acfa815",
     "url": "/WebApp/index.html"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/js/about.c87745d7.js"
   },
   {
-    "revision": "b8c5b673f418db28bc3d",
-    "url": "/WebApp/js/app.24515fee.js"
+    "revision": "71406631e13bfd712cdb",
+    "url": "/WebApp/js/app.89f23909.js"
   },
   {
     "revision": "67737693dba7506d3401",
@@ -34,14 +34,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/WebApp/robots.txt"
-  },
-  {
-    "revision": "bb90407d646b918ea46deea9f0d34710",
-    "url": "/WebApp/tt/.github/ISSUE_TEMPLATE/bug_report.md"
-  },
-  {
-    "revision": "440fbf0ec75136f29cf060bd09df4db4",
-    "url": "/WebApp/tt/.github/ISSUE_TEMPLATE/feature_request.md"
   },
   {
     "revision": "faafe28dccfb64b818c3271cf5628dcd",
