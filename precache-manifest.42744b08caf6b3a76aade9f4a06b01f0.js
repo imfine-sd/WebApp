@@ -68,6 +68,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/tt/src/css/wowza-streaming-dev.css"
   },
   {
+    "revision": "4f8e097f0ca61f0399eaac8b51bcbb68",
+    "url": "/WebApp/tt/src/dev-view-play.html"
+  },
+  {
     "revision": "1d07279b79ac47f19ad079daee6519fe",
     "url": "/WebApp/tt/src/dev-view-publish.html"
   },
@@ -178,6 +182,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1390229f9987c1328b033768678ec8a2",
     "url": "/WebApp/tt/src/page_play.js"
+  },
+  {
+    "revision": "e052611dcbea80eedbe4e71e392d8770",
+    "url": "/WebApp/tt/src/play.js"
   },
   {
     "revision": "e14a60c2f6ff38770aa6565e26698e12",
