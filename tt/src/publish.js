@@ -19,9 +19,9 @@ $(document).ready(() => {
     selectedCam: '',
     selectedMic: '',
     settings: {
-      sdpURL: "",
-      applicationName: "",
-      streamName: "",
+      sdpURL: "wss://5f852799e11d1.streamlock.net/webrtc-session.json",
+      applicationName: "live",
+      streamName: "iios",
       audioBitrate: "64",
       audioCodec: "opus",
       videoBitrate: "3500",
@@ -329,6 +329,8 @@ $(document).ready(() => {
       }
       else
       {
+
+        // alert(JSON.stringify(state))
         try {
           hideErrorPanel()
           updatePublisher().then(()=>{
