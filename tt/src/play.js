@@ -9,7 +9,7 @@ window.WowzaWebRTCPlay = WowzaWebRTCPlay;
 
 let state = {
   settings: {
-    playSdpURL: "",
+    playSdpURL: "wss://5f852799e11d1.streamlock.net/webrtc-session.json",
     playApplicationName: "",
     playStreamName: ""
   }
