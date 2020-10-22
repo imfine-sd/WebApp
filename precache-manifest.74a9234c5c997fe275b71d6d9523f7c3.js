@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "52470bf03c6a80c4bcf3",
-    "url": "/WebApp/css/app.ddd3b009.css"
+    "revision": "d50de9c82594fe591a42",
+    "url": "/WebApp/css/app.b44842d8.css"
   },
   {
     "revision": "67737693dba7506d3401",
@@ -16,31 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/css/wowza-streaming-dev.css"
   },
   {
-    "revision": "af0d3034564ab0592a41cf1e7f0bd956",
-    "url": "/WebApp/img/file_copy-24px.af0d3034.svg"
-  },
-  {
-    "revision": "e86ba651cb2a01934607997a524c7a6e",
-    "url": "/WebApp/img/mic-32px.e86ba651.svg"
-  },
-  {
-    "revision": "725ec334a8bb339e2592f227bae87763",
-    "url": "/WebApp/img/mic-off-32px.725ec334.svg"
-  },
-  {
-    "revision": "fc4b7780d1e3479ad981248d4c450278",
-    "url": "/WebApp/img/videocam-32px.fc4b7780.svg"
-  },
-  {
-    "revision": "342a0624aedfaeefe7b2f5c9a11aa979",
-    "url": "/WebApp/img/videocam-off-32px.342a0624.svg"
-  },
-  {
-    "revision": "c9001ef3b7f2482f41365d96b184345f",
-    "url": "/WebApp/img/wowza-logo.c9001ef3.svg"
-  },
-  {
-    "revision": "024e472455f64e7d3c7c7a4678e417f2",
+    "revision": "efaf523b823ea562f8225941262289d7",
     "url": "/WebApp/index.html"
   },
   {
@@ -52,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/js/about.8eeb655f.js"
   },
   {
-    "revision": "52470bf03c6a80c4bcf3",
-    "url": "/WebApp/js/app.cfd0f907.js"
+    "revision": "d50de9c82594fe591a42",
+    "url": "/WebApp/js/app.9216de3d.js"
   },
   {
     "revision": "67737693dba7506d3401",
