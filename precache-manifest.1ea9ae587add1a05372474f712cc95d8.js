@@ -176,6 +176,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/WebApp/tt/src/page_play.js"
   },
   {
+    "revision": "424d4c993909e2d65dda32f7c45a331e",
+    "url": "/WebApp/tt/src/play.js"
+  },
+  {
     "revision": "e14a60c2f6ff38770aa6565e26698e12",
     "url": "/WebApp/tt/src/publish.js"
   }
